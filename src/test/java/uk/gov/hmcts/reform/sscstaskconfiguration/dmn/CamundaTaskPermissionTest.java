@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.iataskconfiguration.dmn;
+package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
@@ -13,7 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.util.List;
 import java.util.Map;
@@ -23,13 +23,13 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_IA_ASYLUM;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_SSCS_ASYLUM;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_IA_ASYLUM;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_SSCS_ASYLUM;
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -146,7 +146,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Execute",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",2,
                 "autoAssignable", false
             )
@@ -243,7 +243,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Execute",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",2,
                 "autoAssignable", false
             )
@@ -272,7 +272,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "hearing-judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",1,
                 "autoAssignable", true
             ),
@@ -280,7 +280,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
@@ -305,7 +305,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "hearing-judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",1,
                 "autoAssignable", true
             ),
@@ -313,7 +313,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "SSCS",
                 "assignmentPriority",1,
                 "autoAssignable", false
             ),
